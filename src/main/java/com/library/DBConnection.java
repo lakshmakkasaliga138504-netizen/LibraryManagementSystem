@@ -20,10 +20,8 @@ public class DBConnection {
         String username = getEnv("DB_USER", "root");
         String password = getEnv("DB_PASSWORD", "root123");
 
-        String url = "jdbc:mysql://" + host + ":" + port + "/"
-                + database + "?useSSL=false&serverTimezone=UTC";
-
-        System.out.println("Login JDBC URL: " + url);
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + database
+                + "?useSSL=false&serverTimezone=UTC";
 
         return DriverManager.getConnection(url, username, password);
     }
